@@ -1,0 +1,19 @@
+ version: '3.7'
+ services:
+  scrapper:
+    build: 
+      context: ./Scrapper-PikPlace
+      dockerfile: Dockerfile
+    volumes:
+      - ./Scrapper-PikPlace/project:/app
+      - ./logs/scrapper:/app/logs
+    extra_hosts:
+      - "psql:177.91.240.105"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+    restart: always
+    command: "sh /app/run.sh"
+    # command: nohup python3 scrapper.py

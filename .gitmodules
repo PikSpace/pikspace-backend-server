@@ -1,0 +1,3 @@
+[submodule "Scrapper-PikPlace"]
+	path = Scrapper-PikPlace
+	url = git@github.com:PikSpace/Scrapper-PikPlace.git
